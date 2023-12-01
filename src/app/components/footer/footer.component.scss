@@ -1,0 +1,27 @@
+@import '../../../sass/mixins';
+footer {
+  @include colors;
+  padding: 20px 0;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+
+    a {
+      color: $secondary-color;
+      text-decoration: none;
+      margin: 0 15px;
+    }
+  }
+
+  .copyright {
+    font-size: 0.8em;
+    margin: 0;
+  }
+}
