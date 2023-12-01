@@ -6,8 +6,8 @@
     </select>
   </div>
   <div class="input-magnifier-container">
-    <input type="text" placeholder="Search..." #inputField [(ngModel)]="searchKeyword">
-    <div class="search-icon" (click)="filterProducts()">
+    <input type="text" placeholder="Search..." #inputField [(ngModel)]="searchKeyword" (input)="filterProducts()">
+    <div class="search-icon" >
       <img src="../../../assets/magnify.png" height="15" width="15" />
     </div>
   </div>
