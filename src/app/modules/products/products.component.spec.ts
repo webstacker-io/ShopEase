@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { ProductsComponent } from './products.component';
+import { SignalService } from 'src/app/shared/services/signal.service';
 
 describe('ProductsComponent', () => {
   let component: ProductsComponent;
@@ -9,7 +10,8 @@ describe('ProductsComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       schemas: [NO_ERRORS_SCHEMA],
-      declarations: [ProductsComponent]
+      declarations: [ProductsComponent],
+      providers: [SignalService]
     });
     fixture = TestBed.createComponent(ProductsComponent);
     component = fixture.componentInstance;
@@ -19,11 +21,17 @@ describe('ProductsComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it(`hoverState has default value`, () => {
-    expect(component.hoverState).toEqual(`out`);
+  it(`should execute toggleHoverState`, () => {
+    component.hoverState = 'in';
+    component.toggleHoverState();
+    expect(component.hoverState).toEqual('in');
+    component.hoverState = 'out';
+    component.toggleHoverState();
+    expect(component.hoverState).toEqual('out');
   });
+  it(`should execute filterProducts`, () => {
+    component.filterProducts();
+    expect(component.filteredProducts).toEqual(component['signal'].products());
 
-  // it(`products has default value`, () => {
-  //   expect(component.products).toEqual([, , , , , , ,]);
-  // });
+  });
 });

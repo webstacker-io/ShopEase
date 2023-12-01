@@ -25,4 +25,9 @@ describe('SideDrawerComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  it('should closeDrawer', () => {
+    const spyFn = spyOn(component.toggleSideDrawer, 'emit');
+    component.closeDrawer();
+    expect(spyFn).toHaveBeenCalled();
+  });
 });

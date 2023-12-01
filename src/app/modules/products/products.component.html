@@ -1,39 +1,32 @@
 <div class="main-container">
   <div class="select-container">
     <select id="category" [(ngModel)]="selectedCategory" (change)="filterProducts()">
-      <option value="option1" selected="true">Category</option>
+      <option value="" selected="selected">Category</option>
       <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
     </select>
   </div>
   <div class="input-magnifier-container">
-    <input
-      type="text"
-      placeholder="Search..."
-      #inputField
-      [(ngModel)]="searchKeyword"
-
-      >
+    <input type="text" placeholder="Search..." #inputField [(ngModel)]="searchKeyword">
     <div class="search-icon" (click)="filterProducts()">
-      <img src="../../../assets/magnify.png" height="15" width="15"/>
+      <img src="../../../assets/magnify.png" height="15" width="15" />
     </div>
   </div>
 </div>
 
 <div class="grid-container">
-<div class="product-grid">
-  <div class="product-card" *ngFor="let product of filteredProducts">
-    <div class="image-container" [@hoverAnimation]="hoverState">
-      <img [src]="product.imageUrl" [alt]="product.name">
-      <div class="overlay">
-        <p>{{ product.description }}</p>
+  <div class="product-grid">
+    <div class="product-card" *ngFor="let product of filteredProducts">
+      <div class="image-container" [@hoverAnimation]="hoverState">
+        <img [src]="product.imageUrl" [alt]="product.name">
+        <div class="overlay">
+          <p>{{ product.description }}</p>
+        </div>
       </div>
-    </div>
-    <div class="details">
-      <p class="product-title">{{ product.name }}</p>
-      <p class="price">{{ product.price }}</p>
-      <button class="add-to-cart">Add to Cart</button>
+      <div class="details">
+        <p class="product-title">{{ product.name }}</p>
+        <p class="price">{{ product.price }}</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
     </div>
   </div>
 </div>
-</div>
-

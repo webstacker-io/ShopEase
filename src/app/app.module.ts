@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SideDrawerComponent } from './components/side-drawer/side-drawer.component';
+import { SignalService } from './shared/services/signal.service';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,7 @@ import { SideDrawerComponent } from './components/side-drawer/side-drawer.compon
     AppRoutingModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [SignalService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

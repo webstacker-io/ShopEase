@@ -23,7 +23,8 @@ describe('AppComponent', () => {
     expect(component.title).toEqual(`ShopEase`);
   });
 
-  it(`isDrawerOpen has default value`, () => {
+  it(`should execute openCloseDrawer`, () => {
+    component.openCloseDrawer(false);
     expect(component.isDrawerOpen).toEqual(false);
   });
 });
