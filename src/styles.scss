@@ -1,1 +1,82 @@
-/* You can add global styles to this file, and also import other style files */
+@import './sass/variables';
+@import './sass/mixins';
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+}
+
+header {
+  @include colors;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+
+    .nav-list {
+      list-style: none;
+      display: flex;
+      margin: 0;
+
+      li {
+        margin-right: 20px;
+
+        a {
+          text-decoration: none;
+          @include colors;
+        }
+      }
+    }
+
+    .menu-icon {
+      display: none;
+      font-size: 1.5em;
+      cursor: pointer;
+    }
+  }
+}
+
+main {
+  padding: 20px;
+}
+
+footer {
+  @include colors;
+  text-align: center;
+  padding: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+  header nav .nav-list {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    @include colors;
+
+    li {
+      margin: 0;
+      text-align: center;
+      padding: 10px;
+      border-bottom: 1px solid darken($primary-color, 10%);
+
+      a {
+        color: $secondary-color;
+      }
+    }
+  }
+
+  header nav .menu-icon {
+    display: block;
+  }
+}

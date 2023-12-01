@@ -1,0 +1,36 @@
+@import '../../../sass/mixins';
+
+.side-drawer {
+  @include colors;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 50% !important;
+  height: 100%;
+  padding: 20px;
+  transition: left 0.3s ease;
+  & .menu-items {
+     padding-left: 0px;
+    li {
+        list-style: none;
+        padding: 5px;
+        line-height: 30px;
+        border-bottom: 1px solid $secondary-color;
+        cursor: pointer;
+        a {
+          text-decoration: none;
+          color: $secondary-color;
+        }
+
+      }
+    }
+}
+
+  button {
+    background-color: $button-color;
+    color: $secondary-color;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    float: right;
+  }
